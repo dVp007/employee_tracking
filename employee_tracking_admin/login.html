@@ -24,14 +24,14 @@
 					<div class="row">
 						<div class="input-field col s12 black-text">
 						<i class="material-icons prefix">account_circle</i>
-							<input id="admin-name" type="text" class="validate">
+							<input id="admin-name" type="text" class="validate et-uname">
 							<label class="black-text" for="admin-name">Admin Name</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
 						<i class="material-icons prefix">vpn_key</i>
-							<input id="password" type="password" class="validate">
+							<input id="password" type="password" class="validate et-pass">
 							<label class="black-text" for="password">Admin Password</label>
 						</div>
 					</div>
@@ -55,5 +55,15 @@
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<!-- Compiled and minified JavaScript -->
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
+
+		<!-- including custom scripts -->
+		<script type="text/javascript" src="js/custom.js"></script>
+		<script type="text/javascript">
+				$(document).ready(function(){
+					$.post("php/destroy_session.php",{},function(data){
+						console.log(data);
+					})
+				})
+		</script>
 	</body>
 </html>

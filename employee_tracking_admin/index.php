@@ -1,3 +1,10 @@
+<?php
+session_start();
+if(empty($_SESSION) || !isset($_SESSION))
+	{
+		die("SESSION IS NOT SET");
+	}
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -25,7 +32,7 @@
 								<img class="circle" src="assets/yuna.jpg">
 							</div>
 							<div class="col s8">
-								<h5 class="no-padding">Admin</h5>
+								<h5 class="no-padding"><?=$_SESSION['uname']?></h5>
 							</div>
 						</div>
 						<div class="row">
