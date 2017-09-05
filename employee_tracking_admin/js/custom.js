@@ -2,6 +2,7 @@
 * Login module
 */
 $('.et-login').on('click',function(){
+	console.log("clicked");
 	var uname = $('.et-uname').val(); //username value
 	var pass = $('.et-pass').val();	//password value
 	//ajax parsing

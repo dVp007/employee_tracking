@@ -1,5 +1,8 @@
 <?php
 	session_start();
-	$_SESSION['user'] = null;
-	session_destroy();
+	if(isset($_SESSION)){
+		$_SESSION['user'] = null;
+		session_destroy();
+	}
+	die("1");
 ?>
