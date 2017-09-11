@@ -1,8 +1,19 @@
 <?php
 session_start();
-if(empty($_SESSION) || !isset($_SESSION))
-	{
-		die("SESSION IS NOT SET");
+if(empty($_SESSION) || !isset($_SESSION)){
+		die("SESSION IS NOT SET");}
+	include_once("php/employee_details.php");
+	$employee_obj = getEmployeeDetails();
+	include_once("php/device_details.php");
+	$device_obj = getDeviceDetails();
+	include_once("php/vendor_details.php");
+	$vendor_obj = getVendorDetails();
+	include_once("php/task_details.php");
+	$task_obj = getTaskDetails();
+	while($row = $employee_obj->fetch_assoc()){
+		if ($row['emp_id'] == $_SESSION['uid']) {
+		$admin_name = $row['emp_name'];
+		}
 	}
 ?>
 <!DOCTYPE html>
@@ -37,7 +48,7 @@ if(empty($_SESSION) || !isset($_SESSION))
 						</div>
 						<div class="row">
 							<div class="col 6">
-								<h6 class="white-text email">xyz@gmail.com</h6>
+								<h6 class="white-text email"><?=$admin_name;?></h6>
 							</div>
 						</div>
 						
@@ -48,6 +59,9 @@ if(empty($_SESSION) || !isset($_SESSION))
 					<li><a class="waves-effect" href="#!">History</a></li>
 				</ul>
 				<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+				<ul class="right">
+					<li><a href="login.html" class="flat-btn align-right">logout</a></li>
+				</ul>
 			</nav>
 		</header>
 		<main>
@@ -63,11 +77,69 @@ if(empty($_SESSION) || !isset($_SESSION))
 						</div>
 						<div class="card-content" style="padding-top: 50px;">
 							<h5 class="center-align">Number of Employees</h5>
+							<h5 class="center-align"><?=$employee_obj->num_rows;?></h5>
 						</div>
 						<div class="card-action">
 							<a href="#">This is a link</a>
 						</div>
 					</div>
+				</div>
+				<div class="col s4">
+					<div class="card">
+						<div class="teal lighten-3" style="height: 140px">
+							<div class="row">
+								<div class="col s4 offset-s4">
+									<div class="box circle blue-grey lighten-5"></div>
+								</div>
+							</div>
+						</div>
+						<div class="card-content" style="padding-top: 50px;">
+							<h5 class="center-align">Number of devices</h5>
+							<h5 class="center-align"><?=$device_obj->num_rows;?></h5>
+						</div>
+						<div class="card-action">
+							<a href="#">This is a link</a>
+						</div>
+					</div>
+				</div>
+				<div class="col s4">
+					<div class="card">
+						<div class="teal lighten-3" style="height: 140px">
+							<div class="row">
+								<div class="col s4 offset-s4">
+									<div class="box circle blue-grey lighten-5"></div>
+								</div>
+							</div>
+						</div>
+						<div class="card-content" style="padding-top: 50px;">
+							<h5 class="center-align">Number of Vendors</h5>
+							<h5 class="center-align"><?=$vendor_obj->num_rows;?></h5>
+						</div>
+						<div class="card-action">
+							<a href="#">This is a link</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col s4">
+				<div class="card">
+						<div class="teal lighten-3" style="height: 140px">
+							<div class="row">
+								<div class="col s4 offset-s4">
+									<div class="box circle blue-grey lighten-5"></div>
+								</div>
+							</div>
+						</div>
+						<div class="card-content" style="padding-top: 50px;">
+							<h5 class="center-align">Number of Tasks</h5>
+							<h5 class="center-align"><?=$task_obj->num_rows;?></h5>
+						</div>
+						<div class="card-action">
+							<a href="#">This is a link</a>
+						</div>
+					</div>
+				</div>
 				</div>
 			</div>
 		</main>
