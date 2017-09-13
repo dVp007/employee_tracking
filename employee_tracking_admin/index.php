@@ -1,7 +1,8 @@
 <?php
 session_start();
-if(empty($_SESSION) || !isset($_SESSION)){
-		die("SESSION IS NOT SET");}
+if(empty($_SESSION) || !isset($_SESSION))  die("SESSION IS NOT SET");
+
+
 	include_once("php/employee_details.php");
 	$employee_obj = getEmployeeDetails();
 	include_once("php/device_details.php");
@@ -12,7 +13,7 @@ if(empty($_SESSION) || !isset($_SESSION)){
 	$task_obj = getTaskDetails();
 	while($row = $employee_obj->fetch_assoc()){
 		if ($row['emp_id'] == $_SESSION['uid']) {
-		$admin_name = $row['emp_name'];
+			$_SESSION['name'] = $row['emp_name'];
 		}
 	}
 ?>
@@ -32,37 +33,7 @@ if(empty($_SESSION) || !isset($_SESSION)){
 	</head>
 	<body>
 		<header>
-			<nav class="teal">
-				<ul id="slide-out" class="side-nav fixed">
-					<li><div class="user-view no-padding">
-						<div class="background">
-							<img src="assets/office.jpg">
-						</div>
-						<div class="row" style="padding-top:20px;">
-							<div class="col s4">
-								<img class="circle" src="assets/yuna.jpg">
-							</div>
-							<div class="col s8">
-								<h5 class="no-padding"><?=$_SESSION['uname']?></h5>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col 6">
-								<h6 class="white-text email"><?=$admin_name;?></h6>
-							</div>
-						</div>
-						
-					</div></li>
-					<li><a class="waves-effect" href="index.html">Dashboard</a></li>
-					<li><a class="waves-effect" href="#!">Register</a></li>
-					<li><a class="waves-effect" href="#!">Track</a></li>
-					<li><a class="waves-effect" href="#!">History</a></li>
-				</ul>
-				<a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-				<ul class="right">
-					<li><a href="login.html" class="flat-btn align-right">logout</a></li>
-				</ul>
-			</nav>
+			<?php include "nav.html";?>	
 		</header>
 		<main>
 			<div class="row">
