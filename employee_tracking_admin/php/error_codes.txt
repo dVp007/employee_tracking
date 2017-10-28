@@ -1,0 +1,4 @@
+3-"Please enter the username"
+5-"Please enter the password"
+8-"Please enter the username and password"
+10-"Only spaces and letters are allowed"
