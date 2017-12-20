@@ -1,8 +1,8 @@
 <?php
 	session_start();
 	if(empty($_SESSION) || !isset($_SESSION))  die("SESSION IS NOT SET");
-	include_once("php/employee_details.php");
-	$employee_obj = getEmployees();
+	include_once("php/device_details.php");
+	$device_obj = getdevice();
 ?>
 <!DOCTYPE html>
 <html>
@@ -30,39 +30,49 @@
 	<?php include "nav.html";?>
 	<body>
 		<main>
-			<div id = "employee-list">
+			<div id = "device-list">
 				<div class="row">
 					<div class="col s12">
 						<input class="search" placeholder="Search...">
 						<table>
-						<thead>
-							<th>Name</th>
-							<th>Address</th>
-							<th>Age</th>
-							<th>Contact</th>
-							<th>Gender</th>
-							<th>Track</th>
-						</thead>
-						<tbody class="list">
-							<?php while($row = $employee_obj->fetch_assoc()):?>
-							<tr>
-								<td class="list-name"><?=$row['emp_name'];?></td>
-								<td><?=$row['emp_address'];?></td>
-								<td><?=$row['emp_age'];?></td>
-								<td class="list-contact"><?=$row['emp_contact'];?></td>
-								<td><?=$row['emp_gender'];?></td>
-								<td><a class="waves-effect waves-light btn" id = '<?=$row['emp_id']?>'>Track</a></td>
-							</tr>
-							<?php endwhile?>
-						</tbody>
+							<thead>
+								<th>Imei</th>
+								<th>Name</th>
+								<th>Info</th>
+							</thead>
+							<tbody class="list">
+								<?php while($row = $device_obj->fetch_assoc()):?>
+								<tr>
+									<td ><?=$row['device_imei'];?></td>
+									<td class="list-name"><?=$row['device_name'];?></td>
+									<td ><?=$row['device_info'];?></td>
+								</tr>
+								<?php endwhile?>
+							</tbody>
 						</table>
 					</div>
 				</div>
 				<div class="row">
-					<ul class="pagination" style = "display:inline-block;padding:5px;"></ul>
-				</div>
+				<ul class="pagination" style = "display:inline-block;padding:5px;"></ul>
 			</div>
-		</main>
-		<script type="text/javascript" src="js/employeeList.js"></script>
-	</body>
+		</div>
+	</main>
+	<footer>
+		<a class="btn-floating btn-large waves-effect waves-light teal"
+		href="#modal1"><i class="material-icons">add</i></a>
+		<!-- Modal Structure -->
+		<div id="modal1" class="modal">
+			<div class="modal-content">
+				<h4>Modal Header</h4>
+				<p>A bunch of text</p>
+			</div>
+			<div class="modal-footer">
+				<a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">Agree</a>
+			</div>
+		</div>
+	</footer>
+	
+	<script type="text/javascript" src="js/deviceList.js"></script>
+	<script type="text/javascript" src="js/device.js"></script>
+</body>
 </html>

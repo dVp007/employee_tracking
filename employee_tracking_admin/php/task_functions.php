@@ -3,15 +3,11 @@
 	if(empty($_SESSION) || !isset($_SESSION)){
 		die("SESSION IS NOT SET");
 	}
-	define('__ROOT__', dirname(dirname(__FILE__)));
-	
+	include_once("definations.php");	
 	$details = $_POST['details'];
 	callFunction($details);
-
-
-	
-	function addTask($prod_id,$pick_id,$emp_id){
-		$sql = "INSERT INTO `et_task`(`prod_id`, `pick_id`, `emp_id`) VALUES ($prod_id,$pick_id,$emp_id)";
+	function addTask($prod_id,$pick_id,$emp_id,$device_id){
+		$sql = "INSERT INTO `et_task`(`prod_id`, `pick_id`, `emp_id`,`device_id`) VALUES ($prod_id,$pick_id,$emp_id,$device_id)";
 		include(__ROOT__.'/php/config.php');
 		$result = $con->query($sql);
 		$con->close();

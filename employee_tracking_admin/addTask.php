@@ -4,7 +4,7 @@
 	include_once("php/employee_details.php");
 	$employee_obj = getEmployees(0);
 	include_once("php/device_details.php");
-	$device_obj = getDeviceDetails();
+	$device_obj = getDevice(0);
 	include_once("php/pickupDetails.php");
 	$pickup_obj = getPickupDetails();
 ?>

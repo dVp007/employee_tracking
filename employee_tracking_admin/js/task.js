@@ -33,7 +33,7 @@ $("#add").on("click",function(){
 		'function':'add'
 	}
 	console.log(details);
-	$.post("php/task.php",{ 'details': details },function(data){
+	$.post("php/task_functions.php",{ 'details': details },function(data){
 		console.log(data);
 	})
 })

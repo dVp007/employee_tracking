@@ -4,9 +4,9 @@ if(empty($_SESSION) || !isset($_SESSION))  die("SESSION IS NOT SET");
 
 
 	include_once("php/employee_details.php");
-	$employee_obj = getEmployeeDetails();
+	$employee_obj = getEmployees(0);
 	include_once("php/device_details.php");
-	$device_obj = getDeviceDetails();
+	$device_obj = getDevice(0);
 	include_once("php/vendor_details.php");
 	$vendor_obj = getVendorDetails();
 	include_once("php/task_details.php");
