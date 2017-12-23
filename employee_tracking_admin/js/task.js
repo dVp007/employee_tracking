@@ -21,6 +21,7 @@ $(document).ready(function(){
 	var deviceList = new List("pickup-list",pickup_options);
 });
 $("#add").on("click",function(){
+	
 	var emp_id = parseInt($("input[name='employee']:checked").attr('id'));
 	var pick_id = parseInt($("input[name='pickup']:checked").attr('id').substr(1));
 	var prod_id = 1;
@@ -32,8 +33,12 @@ $("#add").on("click",function(){
 		'device_id':device_id,
 		'function':'add'
 	}
+
 	console.log(details);
 	$.post("php/task_functions.php",{ 'details': details },function(data){
-		console.log(data);
-	})
-})
+		console.log(data);	
+		location.reload(true);
+	});
+
+
+});

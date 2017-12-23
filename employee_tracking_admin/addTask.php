@@ -36,11 +36,11 @@
 			<div>
 				<div class="row">
 					<div id = "employee-list" class="col s4">
-						<input class="search" placeholder="Search...">
+						<input class="search" placeholder="Search Employee Name">
 						<table>
-							<caption>Employee List</caption>
+							
 							<thead>
-								<th>Name</th>
+								<th>Employee Name</th>
 							</thead>
 							<tbody class="list">
 								<?php while($row = $employee_obj->fetch_assoc()):?>
@@ -58,11 +58,11 @@
 					</div>
 				</div>
 				<div id="device-list" class="col s4">
-						<input class="search" placeholder="Search...">
+						<input class="search" placeholder="Search Device Name">
 						<table>
-							<caption>Device List</caption>
+				
 							<thead>
-								<th>Name</th>
+								<th>Device Name</th>
 							</thead>
 							<tbody class="list">
 								<?php while($row = $device_obj->fetch_assoc()):?>
@@ -80,12 +80,12 @@
 					</div>
 				</div>
 				<div id="pickup-list" class="col s4">
-						<input class="search" placeholder="Search...">
+						<input class="search" placeholder="Search Pickup Location">
 						<table>
-							<caption>Pick-up List</caption>
+			
 							<thead>
-								<th>Name</th>
-								<th>Product</th>
+								<th>Pickup Location</th>
+								<th>Product Id</th>
 							</thead>
 							<tbody class="list">
 								<?php while($row = $pickup_obj->fetch_assoc()):?>
@@ -104,9 +104,11 @@
 					</div>
 				</div>
 			</div>
-				<a class="waves-effect waves-light btn" id="add"><i class="material-icons right">send</i>ADD</a>
+				<a class="waves-effect waves-light btn" id="add"><i class="material-icons right" id="refersh">send</i>ADD</a>
 		</div>
 	</main>
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
 	<script type="text/javascript" src="js/task.js"></script>
 </body>
 </html>

@@ -18,7 +18,7 @@
 		}
 		else{
 			/*
-			*	To select all the Employees
+			*	To select all the Devices
 			*/
 			$sql = "SELECT * from `et_device`";
 		}
