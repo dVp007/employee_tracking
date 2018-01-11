@@ -29,7 +29,7 @@
 	
 </ul>
 <script type="text/javascript">
-	
+	var imei = <?=json_encode($imei)?>;
 	
 	const  config = {
 		apiKey: "AAAAk56FbHw:APA91bF9e2Pf6I-sKGApMf3LTGPgLcxVja1y03cnLt5LCE279lWMaP1CiF-A85IlqzeBTuSvlH-w-SlapxWAjczKXsju25zMMmOuhF-O4rLLmMPEeAFoeZYT3cmWC7UI8hdEE0JbNc1A",
@@ -45,7 +45,7 @@
 
 	//create reference
 	const dbRefObject = firebase.database().ref().child('Root');
-	const dbRefList = dbRefObject.child('358058070524588');
+	const dbRefList = dbRefObject.child(imei);
 	var map;
 	var count = 0;
 	var marker;
@@ -81,8 +81,8 @@
 		value = JSON.stringify(snap.val(), null, 3);
 		console.log(value);
 		values = JSON.parse(value);
-		Latitude = values[358058070524588]['Latitude'];
-		Longitude = values[358058070524588]['Longitude'];
+		Latitude = values[imei]['Latitude'];
+		Longitude = values[imei]['Longitude'];
 		initMap(Latitude,Longitude)
 	});
 

@@ -2,7 +2,7 @@
 	session_start();
 	if(empty($_SESSION) || !isset($_SESSION))  die("SESSION IS NOT SET");
 	include_once("php/employee_details.php");
-	$employee_obj = getEmployees();
+	$employee_obj = getEmployees(1);
 	
 ?>
 <!DOCTYPE html>
@@ -60,14 +60,14 @@
 						</thead>
 						<tbody class="list">
 							<?php while($row = $employee_obj->fetch_assoc()):?>
-				
+							
 							<tr>
 								<td class="list-name"><?=$row['emp_name'];?></td>
 								<td><?=$row['emp_address'];?></td>
 								<td><?=$row['emp_age'];?></td>
 								<td class="list-contact"><?=$row['emp_contact'];?></td>
 								<td><?=$row['emp_gender'];?></td>
-								<td><a class="waves-effect waves-light btn" id = '<?=$row['emp_id']?>'>Track</a></td>
+								<td><a class="waves-effect waves-light btn" href="http://localhost/project/employee_tracking_admin/maps/fire.php?imei=<?=$row['device_id'];?>">Track</a></td>
 							</tr>
 							<?php endwhile?>
 						</tbody>

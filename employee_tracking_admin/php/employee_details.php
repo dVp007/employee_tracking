@@ -8,7 +8,7 @@
 			/*
 			*	for employees who are assigned a task
 			*/
-			$sql = "SELECT * FROM `et_employee` WHERE emp_id IN(SELECT emp_id FROM `et_task`) AND `dept_id` = 1";	
+			$sql = "SELECT e.*,t.device_id FROM `et_task` t LEFT JOIN `et_employee` e ON t.emp_id = e.emp_id";	
 		}
 		elseif($active==0){
 			/*
