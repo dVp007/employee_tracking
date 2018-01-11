@@ -44,8 +44,20 @@
 				<div class="row">
 					<div class="col s12">
 						<input class="search" placeholder="Search...">
-						<table>
-							<thead>
+						<table id='tbl'>
+						<div id="loader" style="display: none;">
+  <div class="preloader-wrapper big active" style="margin-left: 500px;">
+    <div class="spinner-layer spinner-blue-only ">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</div>							<thead>
 								<th>Imei</th>
 								<th>Name</th>
 								<th>Info</th>
@@ -63,7 +75,7 @@
 					</div>
 				</div>
 				<div class="row">
-				<ul class="pagination" style = "display:inline-block;padding:5px;"></ul>
+					<ul id="buttonID" class="pagination" style = "display:inline-block;padding:5px;"></ul>
 			</div>
 
 		</div>
@@ -103,5 +115,6 @@
 	</main>
 	<script type="text/javascript" src="js/deviceList.js"></script>
 	<script type="text/javascript" src="js/device.js"></script>
+	<script type="text/javascript" src="js/loader.js"></script>
 </body>
 </html>
