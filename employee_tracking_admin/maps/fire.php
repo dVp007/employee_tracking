@@ -21,11 +21,11 @@
 </head>
 <body>
 <div id="map"></div>
-<pre id="Root">
+<pre id="Root" hidden>
 
 	
 </pre>
-<ul id="list" >
+<ul id="list" hidden>
 	
 </ul>
 <script type="text/javascript">

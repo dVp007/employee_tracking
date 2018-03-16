@@ -41,8 +41,8 @@ if(empty($_SESSION) || !isset($_SESSION))  die("SESSION IS NOT SET");
 					<div class="card">
 						<div class="teal lighten-3" style="height: 140px">
 							<div class="row">
-								<div class="col s4 offset-s4">
-									<div class="box circle blue-grey lighten-5"></div>
+								<div class="col s4 offset-s3">
+									<img class="box circle" style="margin-top:50px; width: 150px; height: 150px; display: block;" src="assets/png/employee.jpg">
 								</div>
 							</div>
 						</div>
@@ -51,7 +51,7 @@ if(empty($_SESSION) || !isset($_SESSION))  die("SESSION IS NOT SET");
 							<h5 class="center-align"><?=$employee_obj->num_rows;?></h5>
 						</div>
 						<div class="card-action">
-							<a href="#">This is a link</a>
+							<a href="employee.php">Employee List</a>
 						</div>
 					</div>
 				</div>
@@ -59,8 +59,8 @@ if(empty($_SESSION) || !isset($_SESSION))  die("SESSION IS NOT SET");
 					<div class="card">
 						<div class="teal lighten-3" style="height: 140px">
 							<div class="row">
-								<div class="col s4 offset-s4">
-									<div class="box circle blue-grey lighten-5"></div>
+								<div class="col s4 offset-s3">
+									<img class="box circle" style="margin-top:50px; width: 150px; height: 150px; display: block;" src="assets/png/device.png">
 								</div>
 							</div>
 						</div>
@@ -69,7 +69,7 @@ if(empty($_SESSION) || !isset($_SESSION))  die("SESSION IS NOT SET");
 							<h5 class="center-align"><?=$device_obj->num_rows;?></h5>
 						</div>
 						<div class="card-action">
-							<a href="#">This is a link</a>
+							<a href="device.php">Device List</a>
 						</div>
 					</div>
 				</div>
@@ -77,8 +77,8 @@ if(empty($_SESSION) || !isset($_SESSION))  die("SESSION IS NOT SET");
 					<div class="card">
 						<div class="teal lighten-3" style="height: 140px">
 							<div class="row">
-								<div class="col s4 offset-s4">
-									<div class="box circle blue-grey lighten-5"></div>
+								<div class="col s4 offset-s3">
+									<img class="box circle" style="margin-top:50px; width: 150px; height: 150px; display: block;" src="assets/png/vendor.png">
 								</div>
 							</div>
 						</div>
@@ -87,7 +87,7 @@ if(empty($_SESSION) || !isset($_SESSION))  die("SESSION IS NOT SET");
 							<h5 class="center-align"><?=$vendor_obj->num_rows;?></h5>
 						</div>
 						<div class="card-action">
-							<a href="#">This is a link</a>
+							<a href="addVendor.php">Vendor List</a>
 						</div>
 					</div>
 				</div>
@@ -97,8 +97,8 @@ if(empty($_SESSION) || !isset($_SESSION))  die("SESSION IS NOT SET");
 				<div class="card">
 						<div class="teal lighten-3" style="height: 140px">
 							<div class="row">
-								<div class="col s4 offset-s4">
-									<div class="box circle blue-grey lighten-5"></div>
+								<div class="col s4 offset-s3">
+									<img class="box circle" style="margin-top:50px; width: 150px; height: 150px; display: block;" src="assets/png/task.png">
 								</div>
 							</div>
 						</div>
@@ -107,7 +107,7 @@ if(empty($_SESSION) || !isset($_SESSION))  die("SESSION IS NOT SET");
 							<h5 class="center-align"><?=$task_obj->num_rows;?></h5>
 						</div>
 						<div class="card-action">
-							<a href="#">This is a link</a>
+							<a href="viewTask.php">Task List</a>
 						</div>
 					</div>
 				</div>

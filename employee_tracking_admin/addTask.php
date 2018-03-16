@@ -94,7 +94,7 @@
 									<input name="pickup" type="radio" id = '<?="p".$row['pickup_id']?>' />
 	      							<label for="<?="p".$row['pickup_id']?>"><?=$row['pickup_name'];?></label>
 	      							</td>
-	      							<td class="product" id="<?=$row['prod_id']?>"><?=$row['prod_id']?></td>
+	      							<td class="product" id="<?=$row['prod_id']?>" hidden></td>
 								</tr>
 								<?php endwhile?>
 							</tbody>

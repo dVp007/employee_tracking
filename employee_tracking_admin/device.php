@@ -90,7 +90,7 @@
 			      	<div class="row">
 			        	<div class="input-field col s6">
 			          		<i class="material-icons prefix">account_circle</i>
-			          		<input id="imei" type="number" class="validate">
+			          		<input placeholder="IMEI-1" id="imei" type="number" class="validate">
 			          		<label for="imei">Imei</label>
 			        	</div>
 			        	<div class="input-field col s6">
@@ -102,7 +102,7 @@
 			      	<div class="row">
 				        <div class="input-field col s12">
           					<textarea id="info" class="materialize-textarea"></textarea>
-          					<label for="info">Textarea</label>
+          					<label for="info">Short description</label>
         				</div>
       				</div>
 

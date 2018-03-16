@@ -3,7 +3,8 @@
 	if(empty($_SESSION) || !isset($_SESSION)){
 		die("SESSION IS NOT SET");
 	}
-	include_once("definations.php");	
+	include_once("definations.php");
+	$security = 0;	
 	$details = $_POST['details'];
 	callFunction($details);
 	function addTask($prod_id,$pick_id,$emp_id,$device_id){

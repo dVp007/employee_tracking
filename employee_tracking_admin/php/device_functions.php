@@ -5,11 +5,13 @@
 	}
 	include_once("definations.php");	
 	$details = $_POST['details'];
-	
+	$security = 0;
 	callFunction($details);
 	
 
 	function addDevice($imei,$name,$info){
+		if($security!=1)
+				return 0;
 		$sql = "INSERT INTO `et_device`(`device_imei`, `device_name`, `device_info`) VALUES ($imei,'$name','$info')";
 		include(__ROOT__.'/php/config.php');
 		$result = $con->query($sql);
@@ -17,6 +19,8 @@
 		return 1;
 	}
 	function deleteDevice($imei){
+		if($security!=1)
+				return 0;
 		if(!do_exist($device_imei)) return "device does not exist";
 
 		$sql = "DELETE FROM `et_device` WHERE `device_imei` = $imei";
@@ -26,6 +30,8 @@
 		return 1;
 	}
 	function do_exist($imei){
+		if($security!=1)
+				return 0;
 		$sql = "SELECT 1 FROM `et_device` WHERE `device_imei` = $imei";
 		include(__ROOT__.'/php/config.php');
 		$result = $con->query($sql);
@@ -33,6 +39,7 @@
 		return $result;
 	}	
 	function callFunction($details){
+		$security = 1;
 		switch ($details['function']) {
 			case 'add':
 				# code...
