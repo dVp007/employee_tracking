@@ -11,7 +11,7 @@ $('.et-login').on('click',function(){
 		console.log(data);
 		switch (data){
 			case "1" :
-				window.location = "index.php";
+				window.location = "home.php";
 		}
 	});
 });

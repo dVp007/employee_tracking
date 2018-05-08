@@ -1,6 +1,4 @@
-
-  		$('#buttonID').click(function(){
-
+$('#buttonID').click(function(){
   $('#loader').show();
   $('#tbl').hide();
   setTimeout(
@@ -8,6 +6,5 @@
   			$('#loader').hide();
   			$('#tbl').show();
   		}, 500);
-
 });
   	
