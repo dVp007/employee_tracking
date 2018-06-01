@@ -10,16 +10,32 @@ $(document).ready(function(){
 
 var add = (function(){
 	var employee = {};
+	
 	//caching
 	$add = $("#emp-add");
-	$select = $('select').formSelect()
 	$modal = $(".modal").modal();
 
 	//eventlisteners
 	$add.on("click",add_employee);
 	//functions
 	function add_employee(){
-		$form = $(this).parent().find("form");
-		console.log($select.val())
+		var name = $("#first_name").val()
+		var address = $("#textarea1").val()
+		var age = $("#age").val()
+		var contact = $("#contact").val() 
+		var gender = $("input[type=radio]").attr("id")
+		employee ={
+			"function":"add",
+			"name":name,
+			"address":address,
+			"age":age,
+			"contact":contact,
+			"gender":gender,
+			"dept_id":1
+		}
+		$.post("php/employee_functions.php",{ 'details': employee },function(data){
+			console.log(data);
+		})
+		console.log(employee)
 	}
 })();

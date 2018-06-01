@@ -95,49 +95,55 @@
 </div>
 <!-- Modal Structure -->
 <div id="modal1" class="modal bottom-sheet">
-	<div class="modal-content">
-		<h4>Employee information</h4>
+	<div class="modal-content" style="padding-bottom: 0px">
+		<h5 style="padding-bottom: 5px">Employee information</h5>
 		<div class="row">
-			<form class="col s12">
-				<div class="row">
-					<div class="input-field col s6">
-						<input placeholder="Placeholder" id="first_name" type="text" class="validate">
-						<label for="first_name">Name</label>
+			<div class="col s12">
+				<form>
+					<div class="row">
+						<div class="input-field col s4">
+							<input placeholder="Name" id="first_name" type="text" class="validate">
+							<label for="first_name">Name</label>
+						</div>
+						<div class="input-field col s3">
+							<input type="radio" id = "male" name="gender"/>
+							<label for="male">Male</label>
+							<input type="radio" id = "female" name="gender"/>
+							<label for="female">Female</label>
+						</div>
+						<div class="input-feild col s1">
+							<label for="age">Age</label>
+							<input type="number" name="age" id="age">
+						</div>
+						<div class="input-feild col s4" >
+							<label for="contact">Contact</label>
+							<input type="text" id="contact" placeholder="9123312***" name="con">
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-						<textarea id="address" class="validate">
-						<label for="address">Address</label>
+					<div class="row">
+						<div class="col s12">
+							<label for="textarea1">Address</label>
+							<textarea id="textarea1" class="materialize-textarea"></textarea>
+						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="input-field col s12">
-							<select>
-								<option value="male">Male</option>
-								<option value="female">Female</option>
-							</select>
-							<label>Gender</label>
-					</div>
-				</div>
-			</form>
-		</div>	
-					<!-- <form>
-						<input type="text" name="emp-name">
-						<input type="text" name="emp-address">
-						<input type="text" name="emp-age">
-						<input type="text" name="emp-contact">
-					</form>
-				</div> -->
-				<div class="modal-footer">
-					<a href="#!" id="emp-add" class="modal-close waves-effect waves-green btn-flat">submit</a>
-				</div>
+				</form>
 			</div>
-		</main>
-		
-		<!-- Compiled and minified JavaScript -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
-		<script type="text/javascript" src="js/employeeList.js"></script>
-		<script type="text/javascript" src="js/loader.js"></script>
-	</body>
+		</div>
+		<!-- <form>
+								<input type="text" name="emp-name">
+								<input type="text" name="emp-address">
+								<input type="text" name="emp-age">
+								<input type="text" name="emp-contact">
+		</form>-->
+	</div>
+	<div class="modal-footer">
+		<a href="#!" id="emp-add" class="modal-close waves-effect waves-green btn-flat">submit</a>
+	</div>
+</div>
+</main>
+<!-- Compiled and minified JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+<script type="text/javascript" src="js/employeeList.js"></script>
+<script type="text/javascript" src="js/loader.js"></script>
+</body>
 </html>
