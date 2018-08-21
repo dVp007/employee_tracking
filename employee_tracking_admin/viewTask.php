@@ -41,10 +41,10 @@
 								<th class="center-align">Device Name</th>
 								<th class="center-align">Pickup Location</th>
 								<th class="center-align">Product Name</th>
-								<th class="center-align">Active</th>
+								<th class="center-align">Task Status</th>
 							</thead>
 							<tbody class ="list">
-							<?php while($row = $task_obj->fetch_assoc()){ ?>
+							<?php while(($row = $task_obj->fetch_assoc()) && $row['task_status'] == 0){ ?>
 								
 								<tr >
 									<td class="center-align" id="<?= $row["emp_id"] ?>">
@@ -61,13 +61,11 @@
       								</td>
       								<td class="center-align">
 										<div class="switch">
-										    <label>
-										      Off
-										      <input type="checkbox">
-										      <span class="lever"></span>
-										      On
-										    </label>
-										  </div>
+											<form action="#">
+											    <input id="<?= $row['task_id']?>" class = "et_status" type="checkbox" />
+											    <label for="<?= $row['task_id']?>"></label>
+											</form>
+										</div>
       								</td>
 								</tr>
 							<?php }
@@ -87,5 +85,21 @@
 	<!-- Compiled and minified JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.99.0/js/materialize.min.js"></script>
 	<script type="text/javascript" src="js/task.js"></script>
+	<script type="text/javascript">
+		(function(){
+			$('.et_status').on("change",function(){
+				var taskId = $(this).attr("id");
+				var details = {
+					'task_id':taskId,
+					'function':'update'
+				}
+				$.post("php/task_functions.php",{ 'details': details },function(data){
+					if(data){
+						location.reload();
+					}
+				})
+			})
+		})();
+	</script>
 </html>
 					

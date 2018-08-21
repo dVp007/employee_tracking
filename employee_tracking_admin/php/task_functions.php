@@ -3,8 +3,7 @@
 	if(empty($_SESSION) || !isset($_SESSION)){
 		die("SESSION IS NOT SET");
 	}
-	include_once("definations.php");
-	$security = 0;	
+	include_once("definations.php");	
 	$details = $_POST['details'];
 	callFunction($details);
 	function addTask($prod_id,$pick_id,$emp_id,$device_id){
@@ -19,6 +18,7 @@
 		include(__ROOT__.'/php/config.php');
 		$result = $con->query($sql);
 		$con->close();
+		echo "1";
 		return 1;
 	}
 	function deleteTask($task_id){
@@ -44,6 +44,7 @@
 	}
 	
 	function callFunction($details){
+
 		switch ($details['function']) {
 			case 'add':
 				# code...
@@ -51,7 +52,7 @@
 				break;
 			case 'update':
 				# code...
-				$result = updateTask($details['task_id'],$details['task_status'])? true : false;
+				$result = updateTask($details['task_id'],1)? true : false;
 				break;
 			case 'delete':
 				# code...
